@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       MANIFEST_BRANCH:
-        type: choice
+        type: lake
         description: Manifest Branch
         options:
         - 12.1
@@ -36,14 +36,14 @@ on:
         type: string
         required: false
       BUILD_TARGET:
-        type: choice
+        type: lake
         description: Partition containing recovery ramdisk
         options:
         - boot
         - recovery
         - vendor_boot
         required: true
-        default: recovery
+        default: vendor_boot
       RECOVERY_INSTALLER:
         description: Include recovery installer zip
         type: boolean
